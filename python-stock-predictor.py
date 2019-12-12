@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov 15 15:33:08 2019
-
 @author: yousuf
 """
 
@@ -20,7 +19,6 @@ import matplotlib.pyplot as plt
 predictLinear takes in a ticker, a start date, and the number
 of days in the future and computes a prediction of the stock 
 price in the future using linear regression
-
 '''
 def predictLinear(ticker, start_date, days_in_future):
     end = datetime.now()
@@ -56,7 +54,7 @@ def predictLinear(ticker, start_date, days_in_future):
     b = model.intercept_ + coeffs[1]*a
     
     plt.title('Linear Regression Model for ' + ticker + 'starting at ' + 
-              start_date.strftime('%m-%d-%y))
+              start_date.strftime('%m-%d-%y'))
     plt.ylabel('Price ($)')
     plt.xlabel('Date')
     
@@ -89,5 +87,3 @@ for elem in ticker_array:
     prediction = predictLinear(elem, start_date, days_in_future)
     print(elem + " price in " + str(days_in_future) + " days will be $" 
           + str(round(prediction, 2)) + " according to this model")
-
-    
